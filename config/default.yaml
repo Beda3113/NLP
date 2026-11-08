@@ -1,0 +1,53 @@
+paths:
+  vector_db: ./vector_db
+  config: config/default.yaml
+
+processing:
+  supported_formats: "xlsx,xls,csv,pdf,jpg,jpeg,png,tiff,bmp,docx,txt,md"
+  ignored_formats: "mp4,mov,mpg,mpeg,avi,mkv,wmv,flv,webm,mp3,wav,flac,aac,ogg,wma,m4a,exe,msi,zip,rar,7z,tar,gz"
+  timeout_per_file: 30
+  workers: null
+  ocr:
+    languages: rus+eng
+    psm: 6
+    preprocess: true
+    low_text_threshold: 50
+  chunking:
+    chunk_size: 512
+    overlap_sentences: 2
+    min_chunk_size: 20
+    protect_abbreviations: true
+    table_atomic: true
+
+vectorization:
+  model: intfloat/multilingual-e5-large-instruct
+  batch_size: 32
+  normalize: true
+  use_reranker: false
+  reranker_model: BAAI/bge-reranker-v2-m3
+  query_prefix: "query: "
+  passage_prefix: "passage: "
+
+gpu:
+  use_multi_gpu: true
+  devices: [0]
+  allow_cpu: true
+  cache_visible_devices: true
+
+storage:
+  backend: faiss
+  index_type: IndexFlatIP
+
+search:
+  hybrid: false
+  dense_weight: 0.7
+  bm25_weight: 0.3
+  use_mmr: false
+  mmr_lambda: 0.5
+  max_chunks_per_source: 3
+  candidates_multiplier: 5
+
+domain:
+  abbreviations: {}
+  synonyms: {}
+  units: []
