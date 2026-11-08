@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: document-vectorizer
+Version: 2.0.0
+Summary: Конвертер документов в векторную базу с GPU
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.1
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: tqdm>=4.66
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: python-docx>=1.1
+Requires-Dist: pdfplumber>=0.11
+Requires-Dist: PyPDF2>=3.0
+Requires-Dist: pdf2image>=1.17
+Requires-Dist: pytesseract>=0.3.10
+Requires-Dist: Pillow>=10.0
+Requires-Dist: torch>=2.1
+Requires-Dist: sentence-transformers>=2.7
+Requires-Dist: faiss-cpu>=1.7
+Provides-Extra: gpu
+Requires-Dist: faiss-gpu>=1.7.2; extra == "gpu"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Dynamic: requires-python

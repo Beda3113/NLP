@@ -1,0 +1,19 @@
+models:
+  multilingual_mini:
+    name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    dimension: 384
+    speed: fast
+    quality: good
+    recommended: true
+
+  multilingual_mpnet:
+    name: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+    dimension: 768
+    speed: medium
+    quality: excellent
+
+  distiluse:
+    name: "sentence-transformers/distiluse-base-multilingual-cased-v2"
+    dimension: 512
+    speed: fast
+    quality: good
